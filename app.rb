@@ -1,7 +1,10 @@
 require 'net/http'
 require 'json'
+require 'yaml'
 
-API_KEY = '4c7e7ac9ed08b686ec3b501a2ee604c3'
+secrets = YAML.load_file('config/secrets.yml')
+API_KEY = secrets['api_key']
+
 BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
 def clear
